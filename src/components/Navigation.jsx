@@ -6,9 +6,6 @@ export default function Navigation() {
     <nav>
       <ul className="list-none flex gap-6 text-lg font-semibold">
         <li className="hover:underline hover:underline-offset-8">
-          <Link to="/archived">Archived</Link>
-        </li>
-        <li className="hover:underline hover:underline-offset-8">
           <Link to="/add">Add</Link>
         </li>
         <li className="hover:underline hover:underline-offset-8">
