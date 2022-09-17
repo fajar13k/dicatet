@@ -1,19 +1,19 @@
 import React from 'react';
-import { showFormattedDate } from '../utils';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import NoteItemDate from './NoteItemDate';
 
-export default function NoteItemHeader({ createdAt, title })  {
+export default function NoteItemHeader({ createdAt, id, title })  {
   return (
     <div className="mb-4">
-      <h3 className="text-xl font-semibold">{title}</h3>
-      <span className="text-sm">
-        {showFormattedDate(createdAt)}
-      </span>
+      <Link to={`/${id}`}><h3 className="text-xl font-semibold underline underline-offset-4 decoration-pink-400">{title}</h3></Link>
+      <NoteItemDate createdAt={createdAt} />
     </div>
   )
 }
 
 NoteItemHeader.propTypes = {
   createdAt: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 }

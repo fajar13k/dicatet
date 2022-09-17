@@ -9,13 +9,15 @@ export default function NoteItem({ body, createdAt, id, title }) {
       className="p-6 bg-slate-700 rounded-xl shadow-xl"
       key={id}
     >
-      <NoteItemHeader createdAt={createdAt} title={title} />
+      <NoteItemHeader createdAt={createdAt} id={id} title={title} />
       <NoteItemBody body={body} />
     </article>
   )
 }
 
 NoteItem.propTypes = {
+  body: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 }
