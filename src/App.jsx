@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import AddPage from "./pages/AddPage";
 import DetailPage from "./pages/DetailPage";
 import HomePage from "./pages/HomePage";
-import PageNotFound from './pages/PageNotFound';
+import PageNotFound from './pages/_404';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <main className="px-4 lg:px-32 py-8">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/add" element={<AddPage />} />
           <Route path="/note/:id" element={<DetailPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
