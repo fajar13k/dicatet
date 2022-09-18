@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import parser from 'html-react-parser';
 
 export default function NoteItemBody({ body }) {
   return (
-    <p>{body}</p>
+    <p>{parser(body)}</p>
   )
 }
 
