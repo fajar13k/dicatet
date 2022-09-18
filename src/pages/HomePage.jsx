@@ -8,9 +8,9 @@ function HomePage() {
 
   return (
     <section>
-      <h2 className="font-semibold text-xl mb-4">Active Notes</h2>
+      <h2 className="font-semibold text-xl mb-4">Active Notes ({`${activeNotes.length}`})</h2>
       {activeNotes.length > 0 ? (<NoteList notes={activeNotes} />) : (<p>No active notes!</p>)}
-      <h2 className="font-semibold text-xl my-4">Archived Notes</h2>
+      <h2 className="font-semibold text-xl my-4">Archived Notes ({`${archivedNotes.length}`})</h2>
       {archivedNotes.length > 0 ? (<NoteList notes={archivedNotes} />) : (<p>No archived notes!</p>)}
     </section>
   );
