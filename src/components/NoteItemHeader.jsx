@@ -6,7 +6,7 @@ import NoteItemDate from './NoteItemDate';
 export default function NoteItemHeader({ createdAt, id, title })  {
   return (
     <div className="mb-4">
-      <Link to={`/${id}`}><h3 className="text-xl font-semibold underline underline-offset-4 decoration-pink-400">{title}</h3></Link>
+      <Link to={`/note/${id}`}><h3 className="text-xl font-semibold underline underline-offset-4 decoration-pink-400">{title}</h3></Link>
       <NoteItemDate createdAt={createdAt} />
     </div>
   )
