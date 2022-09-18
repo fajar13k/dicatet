@@ -4,7 +4,7 @@ import parser from 'html-react-parser';
 
 export default function NoteItemBody({ body }) {
   return (
-    <p>{parser(body)}</p>
+    <p className="mt-4">{parser(body)}</p>
   )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import NoteItem from './NoteItem';
+import NoteItem from './NoteItem/NoteItem';
 import PropTypes from 'prop-types';
 
 export default function NoteList({ notes }) {

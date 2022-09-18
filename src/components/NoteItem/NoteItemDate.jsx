@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { showFormattedDate } from '../utils';
+import { showFormattedDate } from '../../utils';
 
 export default function NoteItemDate({ createdAt }) {
   return (
