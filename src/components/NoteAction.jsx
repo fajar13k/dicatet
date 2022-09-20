@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { archiveNote, deleteNote, unarchiveNote } from '../utils/local-data';
 import ArchiveButton from './Button/ArchiveButton';
 import DeleteButton from './Button/DeleteButton';
@@ -33,4 +34,9 @@ export default function NoteAction({ id, noteStatus }) {
       <DeleteButton id={id} deleteNote={onDeleteNote} />
     </div>
   )
+}
+
+NoteAction.propTypes = {
+  id: PropTypes.string.isRequired,
+  noteStatus: PropTypes.bool.isRequired
 }
