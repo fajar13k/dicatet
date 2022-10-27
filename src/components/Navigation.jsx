@@ -1,15 +1,24 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { getAccessToken } from "../utils/network-data";
 
 export default function Navigation({ logout }) {
   const accessToken = getAccessToken();
-  
+
   return (
     <nav>
       <ul className="list-none flex gap-6 text-lg font-semibold items-center">
-        {accessToken !== '' ? (
+        {accessToken === null ? (
+          <>
+            <li className="hover:underline hover:underline-offset-8">
+              <Link to="/login">Login</Link>
+            </li>
+            <li className="hover:underline hover:underline-offset-8">
+              <Link to="/register">Register</Link>
+            </li>
+          </>
+        ) : (
           <>
             <li className="hover:underline hover:underline-offset-8">
               <Link to="/add">Add</Link>
@@ -18,16 +27,12 @@ export default function Navigation({ logout }) {
               <a href="https://github.com/fajar13k/dicatet">Github</a>
             </li>
             <li className="hover:underline hover:underline-offset-8">
-              <button className="bg-white px-2 py-1 rounded-md text-pink-400 hover:opacity-90" onClick={logout}>Logout</button>
-            </li>
-          </>
-        ) : (
-          <>
-            <li className="hover:underline hover:underline-offset-8">
-              <Link to="/login">Login</Link>
-            </li>
-            <li className="hover:underline hover:underline-offset-8">
-              <Link to="/register">Register</Link>
+              <button
+                className="bg-white px-2 py-1 rounded-md text-pink-400 hover:opacity-90"
+                onClick={logout}
+              >
+                Logout
+              </button>
             </li>
           </>
         )}
@@ -37,5 +42,5 @@ export default function Navigation({ logout }) {
 }
 
 Navigation.propTypes = {
-  logout: PropTypes.func.isRequired,
-}
+  logout: PropTypes.func,
+};

@@ -7,7 +7,7 @@ import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
 import PageNotFound from "./pages/_404";
 import LoginPage from "./pages/LoginPage";
-import { getUserLogged, putAccessToken } from "./utils/network-data";
+import { getAccessToken, getUserLogged, putAccessToken, removeAccessToken } from "./utils/network-data";
 
 function App() {
   const [authedUser, setAuthedUser] = useState(null);
@@ -23,7 +23,11 @@ function App() {
       setIsLoading(false);
     }
 
-    getUserLoggedData();
+    if (getAccessToken() !== null) {
+      getUserLoggedData();
+    } else {
+      setIsLoading(false);
+    }
   }, []);
 
   const onLoginSuccess = async ({ accessToken }) => {
@@ -35,7 +39,7 @@ function App() {
 
   const onLogout = async () => {
     setAuthedUser(null);
-    putAccessToken('');
+    removeAccessToken();
     navigate('/login');
   }
 

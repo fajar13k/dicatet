@@ -10,7 +10,6 @@ function HomePage() {
   const [searchedNotes, setSearchedNotes] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchKeyword = searchParams.get('keyword');
   const changeSearchParams = (keyword) => {
     setSearchParams({ keyword });
   }
