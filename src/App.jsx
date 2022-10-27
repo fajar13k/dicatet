@@ -3,6 +3,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import AddPage from "./pages/AddPage";
 import DetailPage from "./pages/DetailPage";
+import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
 import PageNotFound from './pages/_404';
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/add" element={<AddPage />} />
           <Route path="/note/:id" element={<DetailPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
