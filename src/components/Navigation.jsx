@@ -1,20 +1,24 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getAccessToken } from "../utils/network-data";
 
-export default function Navigation() {
+export default function Navigation({ logout }) {
   const accessToken = getAccessToken();
   
   return (
     <nav>
-      <ul className="list-none flex gap-6 text-lg font-semibold">
-        {accessToken !== null ? (
+      <ul className="list-none flex gap-6 text-lg font-semibold items-center">
+        {accessToken !== '' ? (
           <>
             <li className="hover:underline hover:underline-offset-8">
               <Link to="/add">Add</Link>
             </li>
             <li className="hover:underline hover:underline-offset-8">
               <a href="https://github.com/fajar13k/dicatet">Github</a>
+            </li>
+            <li className="hover:underline hover:underline-offset-8">
+              <button className="bg-white px-2 py-1 rounded-md text-pink-400 hover:opacity-90" onClick={logout}>Logout</button>
             </li>
           </>
         ) : (
@@ -23,11 +27,15 @@ export default function Navigation() {
               <Link to="/login">Login</Link>
             </li>
             <li className="hover:underline hover:underline-offset-8">
-              <Link to="/login">Register</Link>
+              <Link to="/register">Register</Link>
             </li>
           </>
         )}
       </ul>
     </nav>
   );
+}
+
+Navigation.propTypes = {
+  logout: PropTypes.func.isRequired,
 }
