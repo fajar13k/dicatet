@@ -16,7 +16,7 @@ function RegisterPage() {
   
   return (
     <section className="flex flex-col justify-center items-center">
-      <h2 className="text-2xl font-semibold underline underline-offset-4 decoration-pink-400">Hello, friend!</h2>
+      <h2 className="text-2xl font-semibold underline underline-offset-4 decoration-pink-400 mb-8">Hello, friend!</h2>
       <RegisterInput register={onRegisterHandler} />
     </section>
   )
