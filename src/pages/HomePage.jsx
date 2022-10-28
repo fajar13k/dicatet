@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import NoteList from "../components/NoteList";
 import SearchBar from "../components/SearchBar";
+import { Text } from "../contexts/LanguageContext/LanguageContextWrapper";
 import { getActiveNotes, getArchivedNotes } from "../utils/network-data";
 
 function HomePage() {
@@ -52,20 +53,22 @@ function HomePage() {
         }}
       />
       <h2 className="font-semibold text-xl my-4 text-slate-700 dark:text-neutral-50">
-        Active Notes ({`${activeNotes.length}`})
+        <Text tid="active_notes" /> ({`${activeNotes.length}`})
       </h2>
       {searchedNotes(activeNotes).length > 0 ? (
         <NoteList notes={searchedNotes(activeNotes)} />
       ) : (
-        <p className="text-slate-700 dark:text-neutral-50">No active notes!</p>
+        <p className="text-slate-700 dark:text-neutral-50"><Text tid="no_active_notes" /></p>
       )}
       <h2 className="font-semibold text-xl my-4 text-slate-700 dark:text-neutral-50">
-        Archived Notes ({`${archivedNotes.length}`})
+        <Text tid="archived_notes" /> ({`${archivedNotes.length}`})
       </h2>
       {searchedNotes(archivedNotes).length > 0 ? (
         <NoteList notes={searchedNotes(archivedNotes)} />
       ) : (
-        <p className="text-slate-700 dark:text-neutral-50">No archived notes!</p>
+        <p className="text-slate-700 dark:text-neutral-50">
+          <Text tid="no_archived_notes" />
+        </p>
       )}
     </section>
   );

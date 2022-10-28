@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import PageNotFound from "./pages/_404";
 import LoginPage from "./pages/LoginPage";
 import { getAccessToken, getUserLogged, putAccessToken, removeAccessToken } from "./utils/network-data";
+import { Text } from "./contexts/LanguageContext/LanguageContextWrapper";
 
 function App() {
   const [authedUser, setAuthedUser] = useState(null);
@@ -46,21 +47,21 @@ function App() {
   return (
     <>
       {isLoading ? (
-        <section className="flex justify-center items-center h-screen">
-          <h1 className="font-bold text-4xl">I'm Loading ...</h1>
+        <section className="bg-neutral-100 dark:bg-slate-700 flex justify-center items-center h-full">
+          <h1 className="text-slate-700 dark:text-neutral-50 font-bold text-4xl"><Text tid="loading" /></h1>
         </section>
       ) : authedUser !== null ? (
-        <div className="max-w-6-xl bg-neutral-100 dark:bg-gray-800 h-screen">
+        <div className="max-w-6-xl bg-neutral-100 dark:bg-gray-800 h-full">
           <header className="flex justify-between items-center px-4 lg:px-32 py-4 bg-gradient-to-r from-pink-400 to-pink-600">
             <Link to="/">
               <h1 className="font-bold text-4xl hover:underline hover:underline-offset-8 text-neutral-50">
                 Dicatet
               </h1>
             </Link>
-            <h2 className="text-xl text-neutral-50">Hi, <span className="font-bold">{authedUser.name}!</span></h2>
+            <h2 className="text-xl text-neutral-50"><Text tid="hi" />, <span className="font-bold">{authedUser.name}!</span></h2>
             <Navigation logout={onLogout} />
           </header>
-          <main className="px-4 lg:px-32 py-8">
+          <main className="px-4 lg:px-32 py-8 h-screen">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/add" element={<AddPage />} />
@@ -70,7 +71,7 @@ function App() {
           </main>
         </div>
       ) : (
-        <div className="max-w-6-xl bg-neutral-100 dark:bg-gray-800 h-screen">
+        <div className="max-w-6-xl bg-neutral-100 dark:bg-gray-800 h-full">
           <header className="flex justify-between items-center px-4 lg:px-32 py-4 bg-gradient-to-r from-pink-400 to-pink-600">
             <Link to="/">
               <h1 className="font-bold text-4xl hover:underline hover:underline-offset-8 text-neutral-50">
@@ -79,7 +80,7 @@ function App() {
             </Link>
             <Navigation />
           </header>
-          <main className="px-4 lg:px-32 py-8">
+          <main className="px-4 lg:px-32 py-8 h-screen">
             <Routes>
               <Route
                 path="/*"

@@ -24,7 +24,7 @@ export default function Navigation({ logout }) {
               <Link to="/login"><Text tid="login" /></Link>
             </li>
             <li className="text-neutral-50 hover:underline hover:underline-offset-8">
-              <Link to="/register">Register</Link>
+              <Link to="/register"><Text tid="register" /></Link>
             </li>
           </>
         ) : (
@@ -36,7 +36,7 @@ export default function Navigation({ logout }) {
               <ThemeSwitch />
             </li>
             <li className="text-neutral-50 hover:underline hover:underline-offset-8">
-              <Link to="/add">Add</Link>
+              <Link to="/add"><Text tid="add" /></Link>
             </li>
             <li className="text-neutral-50 hover:underline hover:underline-offset-8">
               <a href="https://github.com/fajar13k/dicatet">Github</a>
@@ -46,7 +46,7 @@ export default function Navigation({ logout }) {
                 className="bg-white px-3 py-1 rounded-md text-pink-400 hover:opacity-90"
                 onClick={logout}
               >
-                Logout
+                <Text tid="logout" />
               </button>
             </li>
           </>
