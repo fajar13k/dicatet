@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { getAccessToken } from "../utils/network-data";
+import ThemeSwitch  from "../components/Button/ThemeSwitch";
 
 export default function Navigation({ logout }) {
   const accessToken = getAccessToken();
@@ -11,6 +12,9 @@ export default function Navigation({ logout }) {
       <ul className="list-none flex gap-6 text-lg font-semibold items-center">
         {accessToken === null ? (
           <>
+            <li className="hover:underline hover:opacity-90">
+              <ThemeSwitch />
+            </li>
             <li className="hover:underline hover:underline-offset-8">
               <Link to="/login">Login</Link>
             </li>
@@ -20,6 +24,9 @@ export default function Navigation({ logout }) {
           </>
         ) : (
           <>
+            <li className="hover:underline hover:opacity-90">
+              <ThemeSwitch />
+            </li>
             <li className="hover:underline hover:underline-offset-8">
               <Link to="/add">Add</Link>
             </li>
