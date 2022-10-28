@@ -28,7 +28,7 @@ export default function Navigation({ logout }) {
             </li>
             <li className="hover:underline hover:underline-offset-8">
               <button
-                className="bg-white px-2 py-1 rounded-md text-pink-400 hover:opacity-90"
+                className="bg-white px-3 py-1 rounded-md text-pink-400 hover:opacity-90"
                 onClick={logout}
               >
                 Logout

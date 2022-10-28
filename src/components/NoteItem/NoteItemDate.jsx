@@ -11,5 +11,5 @@ export default function NoteItemDate({ createdAt }) {
 }
 
 NoteItemDate.propTypes = {
-  createdAt: PropTypes.string.isRequired
+  createdAt: PropTypes.string.isRequired,
 }

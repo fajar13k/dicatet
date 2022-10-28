@@ -23,11 +23,7 @@ function App() {
       setIsLoading(false);
     }
 
-    if (getAccessToken() !== null) {
-      getUserLoggedData();
-    } else {
-      setIsLoading(false);
-    }
+    getUserLoggedData();
   }, []);
 
   const onLoginSuccess = async ({ accessToken }) => {

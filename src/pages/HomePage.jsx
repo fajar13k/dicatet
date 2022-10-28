@@ -1,43 +1,69 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import NoteList from "../components/NoteList";
 import SearchBar from "../components/SearchBar";
-import { getAllNotes } from "../utils/local-data";
+import { getActiveNotes, getArchivedNotes } from "../utils/network-data";
 
 function HomePage() {
-  const [notes, setNotes] = useState(getAllNotes());
-  const [searchedNotes, setSearchedNotes] = useState([]);
+  const [activeNotes, setActiveNotes] = useState([]);
+  const [archivedNotes, setArchivedNotes] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+
   const changeSearchParams = (keyword) => {
     setSearchParams({ keyword });
-  }
+  };
 
-  const activeNotes = (searchedNotes || notes).filter((note) => !note.archived);
-  const archivedNotes = (searchedNotes || notes).filter((note) => note.archived);
+  const fetchAllActiveNotes = async () => {
+    const response = await getActiveNotes();
+    setActiveNotes(response.data);
+  };
+
+  const fetchAllArchivedNotes = async () => {
+    const response = await getArchivedNotes();
+    setArchivedNotes(response.data);
+  };
+
+  const searchedNotes = (params) => {
+    return params.length > 0
+      ? params
+          .filter((note) =>
+            note.title.toLowerCase().includes(keyword.toLowerCase())
+          )
+          .map((item) => {
+            item = { ...item };
+            return item;
+          })
+      : [];
+  };
 
   useEffect(() => {
-    setSearchedNotes(notes.filter((note) => note.title.toLowerCase().includes(keyword.toLowerCase())));
-    changeSearchParams(keyword);
-  }, [keyword, notes]);
+    fetchAllActiveNotes();
+    fetchAllArchivedNotes();
+  }, []);
 
   return (
-    <section >
-      <SearchBar keyword={keyword} setKeyword={setKeyword} />
+    <section>
+      <SearchBar
+        keyword={keyword}
+        setKeyword={(value) => {
+          setKeyword(value);
+          changeSearchParams(value);
+        }}
+      />
       <h2 className="font-semibold text-xl my-4">
         Active Notes ({`${activeNotes.length}`})
       </h2>
-      {activeNotes.length > 0 ? (
-        <NoteList notes={activeNotes} />
+      {searchedNotes(activeNotes).length > 0 ? (
+        <NoteList notes={searchedNotes(activeNotes)} />
       ) : (
         <p>No active notes!</p>
       )}
       <h2 className="font-semibold text-xl my-4">
         Archived Notes ({`${archivedNotes.length}`})
       </h2>
-      {archivedNotes.length > 0 ? (
-        <NoteList notes={archivedNotes} />
+      {searchedNotes(archivedNotes).length > 0 ? (
+        <NoteList notes={searchedNotes(archivedNotes)} />
       ) : (
         <p>No archived notes!</p>
       )}

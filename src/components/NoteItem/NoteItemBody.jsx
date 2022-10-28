@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import parser from 'html-react-parser';
+import ReactHtmlParser from 'react-html-parser';
 
 export default function NoteItemBody({ body }) {
   return (
-    <p className="mt-4">{parser(body)}</p>
+    <p className="mt-4">{ ReactHtmlParser(body) }</p>
   )
 }
 
 NoteItemBody.propTypes = {
-  body: PropTypes.string.isRequired
+  body: PropTypes.string
 }
