@@ -4,7 +4,7 @@ import { showFormattedDate } from '../../utils';
 
 export default function NoteItemDate({ createdAt }) {
   return (
-    <span className="text-sm">
+    <span className="text-sm text-slate-700 dark:text-neutral-50">
       {showFormattedDate(createdAt)}
     </span>
   )

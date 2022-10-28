@@ -4,7 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 export default function NoteItemBody({ body }) {
   return (
-    <p className="mt-4">{ ReactHtmlParser(body) }</p>
+    <p className="mt-4 text-slate-700 dark:text-neutral-50">{ ReactHtmlParser(body) }</p>
   )
 }
 

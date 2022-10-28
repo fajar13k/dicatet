@@ -1,22 +1,18 @@
 import React, { useContext } from "react";
 import ThemeContext from "../../contexts/ThemeContext";
+import { Moon, Sun } from 'react-feather';
 
 function ThemeSwitch() {
   const { currentTheme, changeCurrentTheme } = useContext(ThemeContext);
 
   return (
     <button
-      style={{
-        padding: 5,
-        borderRadius: 5,
-        color: currentTheme === "light" ? "white" : "black",
-        background: currentTheme === "light" ? "black" : "white",
-      }}
+      className="text-neutral-50"
       onClick={() =>
         changeCurrentTheme(currentTheme === "light" ? "dark" : "light")
       }
     >
-      {currentTheme === "light" ? "DARK" : "LIGHT"} MODE
+      {currentTheme === "light" ? <Moon /> : <Sun />}
     </button>
   );
 }

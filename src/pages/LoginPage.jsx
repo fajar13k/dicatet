@@ -18,7 +18,7 @@ function LoginPage({ loginSuccess }) {
 
   return (
     <section className="flex flex-col justify-center items-center">
-      <h2 className="text-2xl font-semibold underline underline-offset-4 decoration-pink-400 mb-8">Introduce yourself!</h2>
+      <h2 className="text-2xl font-semibold underline underline-offset-4 decoration-pink-400 mb-8 text-slate-700 dark:text-neutral-50">Introduce yourself!</h2>
       <LoginInput login={onLogin} />
     </section>
   )

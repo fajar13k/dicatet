@@ -51,7 +51,7 @@ function HomePage() {
           changeSearchParams(value);
         }}
       />
-      <h2 className="font-semibold text-xl my-4">
+      <h2 className="font-semibold text-xl my-4 text-slate-700 dark:text-neutral-50">
         Active Notes ({`${activeNotes.length}`})
       </h2>
       {searchedNotes(activeNotes).length > 0 ? (
@@ -59,7 +59,7 @@ function HomePage() {
       ) : (
         <p>No active notes!</p>
       )}
-      <h2 className="font-semibold text-xl my-4">
+      <h2 className="font-semibold text-xl my-4 text-slate-700 dark:text-neutral-50">
         Archived Notes ({`${archivedNotes.length}`})
       </h2>
       {searchedNotes(archivedNotes).length > 0 ? (

@@ -7,7 +7,7 @@ import NoteAction from "./NoteAction";
 export default function NoteDetail({ note }) {
   return (
     <>
-      <h2 className="text-7xl font-semibold mb-2">{note?.title}</h2>
+      <h2 className="text-7xl font-semibold mb-2 text-slate-700 dark:text-neutral-50">{note?.title}</h2>
       <NoteItemDate createdAt={note?.createdAt} />
       <NoteItemBody body={note?.body} />
       <NoteAction id={note?.id} noteStatus={note?.archived} />
