@@ -57,7 +57,7 @@ function HomePage() {
       {searchedNotes(activeNotes).length > 0 ? (
         <NoteList notes={searchedNotes(activeNotes)} />
       ) : (
-        <p>No active notes!</p>
+        <p className="text-slate-700 dark:text-neutral-50">No active notes!</p>
       )}
       <h2 className="font-semibold text-xl my-4 text-slate-700 dark:text-neutral-50">
         Archived Notes ({`${archivedNotes.length}`})
@@ -65,7 +65,7 @@ function HomePage() {
       {searchedNotes(archivedNotes).length > 0 ? (
         <NoteList notes={searchedNotes(archivedNotes)} />
       ) : (
-        <p>No archived notes!</p>
+        <p className="text-slate-700 dark:text-neutral-50">No archived notes!</p>
       )}
     </section>
   );

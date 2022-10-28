@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { getAccessToken } from "../utils/network-data";
-import ThemeSwitch  from "../components/Button/ThemeSwitch";
+import ThemeSwitch from "../components/Button/ThemeSwitch";
+import LanguageSelector from "./LanguageSelector";
+import { Text } from "../contexts/LanguageContext/LanguageContextWrapper";
 
 export default function Navigation({ logout }) {
   const accessToken = getAccessToken();
@@ -13,10 +15,13 @@ export default function Navigation({ logout }) {
         {accessToken === null ? (
           <>
             <li className="hover:underline hover:opacity-90 flex items-center">
+              <LanguageSelector />
+            </li>
+            <li className="hover:underline hover:opacity-90 flex items-center">
               <ThemeSwitch />
             </li>
             <li className="text-neutral-50 hover:underline hover:underline-offset-8">
-              <Link to="/login">Login</Link>
+              <Link to="/login"><Text tid="login" /></Link>
             </li>
             <li className="text-neutral-50 hover:underline hover:underline-offset-8">
               <Link to="/register">Register</Link>
@@ -24,6 +29,9 @@ export default function Navigation({ logout }) {
           </>
         ) : (
           <>
+            <li className="hover:underline hover:opacity-90 flex items-center">
+              <LanguageSelector />
+            </li>
             <li className="hover:underline hover:opacity-90 flex items-center">
               <ThemeSwitch />
             </li>

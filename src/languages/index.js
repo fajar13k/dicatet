@@ -5,5 +5,5 @@ export const dictionaryList = { en, id };
 
 export const languageOptions = {
   en: 'English',
-  id: 'Bahasa Indonesia',
+  id: 'Bahasa Indonesia'
 };
