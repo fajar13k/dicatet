@@ -1,0 +1,22 @@
+{
+  "add": "Add",
+  "active": "Active",
+  "archived": "Archived",
+  "delete": "Delete",
+  "details": "Details",
+  "email": "Email",
+  "hi": "Hi",
+  "hello": "Hello, friend!",
+  "introduction": "Introduce yourself!",
+  "login": "Login",
+  "logout": "Logout",
+  "name": "Name",
+  "notes": "Notes",
+  "password": "Password",
+  "registration": "Registration",
+  "title": "Title",
+  "untitled": "Untitled",
+  "your_email": "Your email",
+  "your_name": "Your name",
+  "your_password": "Your password"
+}

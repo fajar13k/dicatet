@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import ThemeContextProvider from './contexts/ThemeContextWrapper';
+import ThemeContextProvider from './contexts/ThemeProvider/ThemeContextWrapper';
 import "./styles/index.css";
 import App from "./App";
 

@@ -1,0 +1,22 @@
+{
+  "add": "Tambah",
+  "active": "Aktif",
+  "archived": "Arsip",
+  "delete": "Hapus",
+  "details": "Rincian",
+  "email": "Surel",
+  "hi": "Hai",
+  "hello": "Halo, sob!",
+  "introduction": "Kenalan dong!",
+  "login": "Masuk",
+  "logout": "Keluar",
+  "name": "Nama",
+  "notes": "Catatan",
+  "password": "Kata Sandi",
+  "registration": "Pendaftaran",
+  "title": "Judul",
+  "untitled": "Tanpa judul",
+  "your_email": "Surel kamu",
+  "your_name": "Nama kamu",
+  "your_password": "Kata sandi kamu"
+}

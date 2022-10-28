@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ThemeContext from "../../contexts/ThemeContext";
+import ThemeContext from "../../contexts/ThemeProvider/ThemeContext";
 import { Moon, Sun } from 'react-feather';
 
 function ThemeSwitch() {
