@@ -14,7 +14,7 @@ export default function Navigation({ logout }) {
       <ul className="list-none flex gap-6 text-lg font-semibold items-center">
         {accessToken === null ? (
           <>
-            <li className="hover:underline hover:opacity-90 flex items-center">
+            <li className="hover:opacity-95 flex items-center">
               <LanguageSelector />
             </li>
             <li className="hover:underline hover:opacity-90 flex items-center">
@@ -29,7 +29,7 @@ export default function Navigation({ logout }) {
           </>
         ) : (
           <>
-            <li className="hover:underline hover:opacity-90 flex items-center">
+            <li className="hover:opacity-95 flex items-center">
               <LanguageSelector />
             </li>
             <li className="hover:underline hover:opacity-90 flex items-center">

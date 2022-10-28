@@ -11,6 +11,7 @@ export default function LanguageSelector() {
 
   return (
     <select
+      className="p-1 rounded-md"
       onChange={handleLanguageChange}
       value={userLanguage}
     >
