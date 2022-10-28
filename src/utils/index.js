@@ -4,6 +4,9 @@ const showFormattedDate = (date) => {
   
   switch (locale) {
     case 'en':
+      localeFormat = "en-GB";
+      break;
+    case 'fr':
       localeFormat = "fr-FR";
       break;
     case 'id':
